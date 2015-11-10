@@ -250,7 +250,7 @@
                                 </constraints>
                                 <state key="normal" title="Log In"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNE-7l-aVD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNE-7l-aVD">
                                 <rect key="frame" x="0.0" y="323" width="600" height="58"/>
                                 <animations/>
                                 <constraints>
@@ -280,7 +280,7 @@
                             <constraint firstItem="GO6-44-1S0" firstAttribute="centerX" secondItem="UNE-7l-aVD" secondAttribute="centerX" id="Y4H-YP-CrL"/>
                             <constraint firstItem="f3K-ui-nck" firstAttribute="trailing" secondItem="UNE-7l-aVD" secondAttribute="trailing" id="YXM-fO-uId"/>
                             <constraint firstItem="GO6-44-1S0" firstAttribute="centerX" secondItem="qmd-d4-Htj" secondAttribute="centerX" id="fqc-YM-fZf"/>
-                            <constraint firstItem="UNE-7l-aVD" firstAttribute="bottom" secondItem="NHu-zz-FU8" secondAttribute="top" id="lQU-eV-Shc"/>
+                            <constraint firstItem="UNE-7l-aVD" firstAttribute="bottom" secondItem="NHu-zz-FU8" secondAttribute="top" constant="-219" id="lQU-eV-Shc"/>
                             <constraint firstItem="f3K-ui-nck" firstAttribute="bottom" secondItem="NHu-zz-FU8" secondAttribute="top" id="lfC-y7-CVa"/>
                             <constraint firstItem="1HZ-Nu-WTg" firstAttribute="top" secondItem="glH-Jc-U5n" secondAttribute="bottom" constant="56" id="wo5-XV-Bht"/>
                             <constraint firstItem="GO6-44-1S0" firstAttribute="centerY" secondItem="EiH-a6-e6C" secondAttribute="centerY" id="xEg-ys-xWg"/>

@@ -34,6 +34,16 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
 
     @IBAction func saveButtonTapped(sender: AnyObject) {
         
+        if let thoughts = self.thoughts {
+            thoughts.title = self.titleTextField.text!
+            thoughts.bodyText = self.bodyTextView.text
+            
+        } else {
+            let newThought = Thoughts(title: self.titleTextField.text! , bodyText: self.bodyTextView.text)
+            ThoughtsController.sharedInstance.addThoughts(newThought)
+            self.thoughts = newThought
+        }
+        
         self.navigationController?.popToRootViewControllerAnimated(true)
         
     }

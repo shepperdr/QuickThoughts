@@ -14,17 +14,30 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserver(self, selector: "thoughtsUpdated:", name: "thoughtsUpdateNotification", object: nil)
+        
+    }
+    
+    func thoughtsUpdated(notification: NSNotification) {
+        self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath)
-        cell.textLabel?.text = "Works?"
+        let thought = ThoughtsController.sharedInstance.thoughts[indexPath.row]
+        cell.textLabel?.text = thought.title
+        
         return cell
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return ThoughtsController.sharedInstance.thoughts.count
         
     }
 }
