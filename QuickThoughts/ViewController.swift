@@ -25,13 +25,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func thoughtsUpdated(notification: NSNotification) {
        
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

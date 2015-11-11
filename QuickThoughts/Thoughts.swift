@@ -45,5 +45,5 @@ class Thoughts: Equatable {
 }
 
 func == (lhs:Thoughts, rhs:Thoughts) ->Bool {
-    return (lhs.title == rhs.title) && (lhs.bodyText == rhs.bodyText)
+    return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
 }

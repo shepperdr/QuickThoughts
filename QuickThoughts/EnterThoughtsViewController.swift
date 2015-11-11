@@ -20,7 +20,7 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         titleTextField.delegate = self
         enterThoughtsView.addGestureRecognizer(tapRec)
         tapRec.addTarget(self, action: "tappedView")
