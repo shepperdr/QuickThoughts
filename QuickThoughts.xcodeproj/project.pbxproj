@@ -109,11 +109,11 @@
 			children = (
 				91D69B671BF16DD00025A287 /* AppDelegate.swift */,
 				91D69B691BF16DD00025A287 /* ViewController.swift */,
-				91D69B7B1BF17C640025A287 /* LoginViewController.swift */,
 				91D69B7D1BF17C760025A287 /* EnterThoughtsViewController.swift */,
 				91D69B811BF19BB50025A287 /* Thoughts.swift */,
 				91D69B951BF1A4E40025A287 /* FirebaseController.swift */,
 				91D69B7F1BF19B340025A287 /* ThoughtsController.swift */,
+				91D69B7B1BF17C640025A287 /* LoginViewController.swift */,
 				91D69B791BF17C550025A287 /* SettingsViewController.swift */,
 				917A09F81BF2E1B70036E285 /* Storyboard */,
 				91D69B941BF1A3610025A287 /* Extras */,

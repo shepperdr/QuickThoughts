@@ -47,12 +47,6 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
-
-    @IBAction func clearButtonTapped(sender: AnyObject) {
-        
-        bodyTextView.text = ""
-        titleTextField.text = ""
-    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         

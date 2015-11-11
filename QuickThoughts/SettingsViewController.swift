@@ -9,9 +9,6 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
-    @IBOutlet weak var contactUsNButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +16,19 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func cancelTapped(sender: AnyObject) {
+        
+    }
    
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+        
+    }
 
+    @IBAction func contactUsButtonTapped(sender: AnyObject) {
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

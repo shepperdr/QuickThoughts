@@ -22,9 +22,25 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="Title" id="WDS-iq-WOb"/>
+                                    <navigationItem title="Title" id="WDS-iq-WOb">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CZV-g1-Lh5">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="NQ6-ti-3J2" id="3Vl-Ra-QT1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeG-rq-I5x">
+                                <rect key="frame" x="238" y="214" width="125" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Contact Us">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="contactUsButtonTapped:" destination="NQ6-ti-3J2" eventType="touchUpInside" id="rgw-Nz-2hX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqa-n7-OAG">
                                 <rect key="frame" x="238" y="133" width="125" height="30"/>
                                 <animations/>
@@ -34,13 +50,9 @@
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeG-rq-I5x">
-                                <rect key="frame" x="238" y="214" width="125" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Contact Us">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="NQ6-ti-3J2" eventType="touchUpInside" id="11P-Cq-k8f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -57,10 +69,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="HFN-2X-Gnw"/>
-                    <connections>
-                        <outlet property="contactUsNButton" destination="qeG-rq-I5x" id="r2x-VE-jiR"/>
-                        <outlet property="logoutButton" destination="oqa-n7-OAG" id="Tgx-9U-eLa"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3f-lM-ccf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,35 +159,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Telll Me Your Thoughts" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2RT-1a-ICg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Telll Me Your Thoughts" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2RT-1a-ICg">
                                 <rect key="frame" x="20" y="170" width="560" height="111"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDn-Pw-gsT">
-                                <rect key="frame" x="254" y="297" width="92" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="1FE-2z-JrN"/>
-                                </constraints>
-                                <state key="normal" title="Clear Text"/>
-                                <connections>
-                                    <action selector="clearButtonTapped:" destination="Rac-2x-te2" eventType="touchUpInside" id="baF-LY-QX9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2RT-1a-ICg" firstAttribute="leading" secondItem="zr2-Qh-uUD" secondAttribute="leadingMargin" id="2GO-aE-sXd"/>
                             <constraint firstItem="ok3-nn-Enz" firstAttribute="trailing" secondItem="2RT-1a-ICg" secondAttribute="trailing" id="7jg-HQ-JET"/>
-                            <constraint firstItem="YDn-Pw-gsT" firstAttribute="top" secondItem="2RT-1a-ICg" secondAttribute="bottom" constant="16" id="Y1i-TL-JZJ"/>
-                            <constraint firstItem="YDn-Pw-gsT" firstAttribute="centerX" secondItem="2RT-1a-ICg" secondAttribute="centerX" id="eiB-aD-GLQ"/>
                             <constraint firstItem="ok3-nn-Enz" firstAttribute="top" secondItem="Eds-2J-RhF" secondAttribute="bottom" constant="51" id="fCm-NY-9ZP"/>
                             <constraint firstItem="2RT-1a-ICg" firstAttribute="trailing" secondItem="zr2-Qh-uUD" secondAttribute="trailingMargin" id="gej-eT-gL3"/>
-                            <constraint firstItem="yPi-eq-XHK" firstAttribute="top" secondItem="YDn-Pw-gsT" secondAttribute="bottom" constant="273" id="lub-jd-24g"/>
                             <constraint firstItem="2RT-1a-ICg" firstAttribute="top" secondItem="ok3-nn-Enz" secondAttribute="bottom" constant="25" id="qAH-Ed-GJu"/>
                             <constraint firstItem="2RT-1a-ICg" firstAttribute="leading" secondItem="ok3-nn-Enz" secondAttribute="leading" id="zbl-lb-hwa"/>
                         </constraints>
