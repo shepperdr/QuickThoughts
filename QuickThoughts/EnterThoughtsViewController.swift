@@ -61,6 +61,13 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         
     }
     
+    func updateWithThought(thought: Thoughts) {
+        self.thoughts = thought
+        self.titleTextField.text = thought.title
+        self.bodyTextView.text = thought.bodyText
+        
+    }
+    
     
     
     /*
