@@ -45,6 +45,7 @@ class ThoughtsController {
             thoughts.removeAtIndex(thoughtsIndex)
            
         }
+        FirebaseController.thoughtBase.childByAppendingPath("Thought").removeValue()
         
     }
     
@@ -53,14 +54,14 @@ class ThoughtsController {
     
         let thoughtDict = self.thoughts.map({$0.dictionaryCopy()})
         
-        FirebaseController.thoughtBase.setValue(thoughtDict)
+        FirebaseController.thoughtBase.childByAppendingPath("Thought").setValue(thoughtDict)
     }
     
     
     func loadThoughts() {
        
-        let thoughtsRef = FirebaseController.thoughtBase
-        thoughtsRef.observeEventType(.Value, withBlock: { (snapshot) -> Void in
+        let thoughtsRef = FirebaseController.thoughtBase.childByAppendingPath("Thought")
+        thoughtsRef.observeEventType(.Value, withBlock: { (snapshot) in
             
             if let thoughtDict = snapshot.value as? [Dictionary<String, AnyObject>] {
                 self.thoughts = thoughtDict.map({Thoughts(dictionary: $0)!})

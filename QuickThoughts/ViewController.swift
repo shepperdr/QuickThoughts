@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
@@ -17,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         let nc = NSNotificationCenter.defaultCenter()
         
-        nc.addObserver(self, selector: "thoughtsUpdated:", name: "thoughtsUpdateNotification", object: nil)
+        nc.addObserver(self, selector: "thoughtsUpdated:", name: thoughtsUpdateNotification, object: nil)
     
     }
     
@@ -27,7 +29,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         super.viewWillAppear(animated)
         
         self.tableView.reloadData()
@@ -45,8 +46,27 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return ThoughtsController.sharedInstance.thoughts.count
         
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            
+            let thought = ThoughtsController.sharedInstance.thoughts[indexPath.row]
+            
+            ThoughtsController.sharedInstance.removeThoughts(thought)
+            
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            tableView.reloadData()
+            
+            
+            
+            
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
