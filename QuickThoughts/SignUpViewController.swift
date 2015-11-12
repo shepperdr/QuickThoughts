@@ -1,31 +1,27 @@
 //
-//  SettingsViewController.swift
+//  SignUpViewController.swift
 //  QuickThoughts
 //
-//  Created by Robert Shepperd on 11/9/15.
+//  Created by Robert Shepperd on 11/11/15.
 //  Copyright © 2015 Robert Shepperd. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-    
+class SignUpViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        
+
         // Do any additional setup after loading the view.
     }
 
-   @IBAction func logoutButtonTapped(sender: AnyObject) {
-       print("Logout Tapped")
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
 
-    @IBAction func contactUsButtonTapped(sender: AnyObject) {
-        print("Contact Tapped")
-    }
-    
-    
     /*
     // MARK: - Navigation
 

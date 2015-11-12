@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		917A0A191BF3E7C60036E285 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917A0A181BF3E7C60036E285 /* JournalViewController.swift */; };
+		917A0A1B1BF3E7F00036E285 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917A0A1A1BF3E7F00036E285 /* JournalController.swift */; };
+		917A0A1F1BF3ED6E0036E285 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917A0A1E1BF3ED6E0036E285 /* Entry.swift */; };
+		917A0A211BF3EE4D0036E285 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917A0A201BF3EE4D0036E285 /* MainViewController.swift */; };
 		91D69B681BF16DD00025A287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D69B671BF16DD00025A287 /* AppDelegate.swift */; };
 		91D69B6A1BF16DD00025A287 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D69B691BF16DD00025A287 /* ViewController.swift */; };
 		91D69B6D1BF16DD00025A287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91D69B6B1BF16DD00025A287 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		917A0A181BF3E7C60036E285 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		917A0A1A1BF3E7F00036E285 /* JournalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		917A0A1E1BF3ED6E0036E285 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		917A0A201BF3EE4D0036E285 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		91D69B641BF16DD00025A287 /* QuickThoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickThoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D69B671BF16DD00025A287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91D69B691BF16DD00025A287 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +96,17 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
+		917A09F91BF2F8B70036E285 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				91D69B7D1BF17C760025A287 /* EnterThoughtsViewController.swift */,
+				91D69B691BF16DD00025A287 /* ViewController.swift */,
+				91D69B7B1BF17C640025A287 /* LoginViewController.swift */,
+				91D69B791BF17C550025A287 /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		91D69B5B1BF16DD00025A287 = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +126,15 @@
 		91D69B661BF16DD00025A287 /* QuickThoughts */ = {
 			isa = PBXGroup;
 			children = (
+				917A0A201BF3EE4D0036E285 /* MainViewController.swift */,
+				917A0A181BF3E7C60036E285 /* JournalViewController.swift */,
+				917A0A1A1BF3E7F00036E285 /* JournalController.swift */,
 				91D69B671BF16DD00025A287 /* AppDelegate.swift */,
-				91D69B691BF16DD00025A287 /* ViewController.swift */,
-				91D69B7D1BF17C760025A287 /* EnterThoughtsViewController.swift */,
+				917A0A1E1BF3ED6E0036E285 /* Entry.swift */,
 				91D69B811BF19BB50025A287 /* Thoughts.swift */,
 				91D69B951BF1A4E40025A287 /* FirebaseController.swift */,
 				91D69B7F1BF19B340025A287 /* ThoughtsController.swift */,
-				91D69B7B1BF17C640025A287 /* LoginViewController.swift */,
-				91D69B791BF17C550025A287 /* SettingsViewController.swift */,
+				917A09F91BF2F8B70036E285 /* ViewControllers */,
 				917A09F81BF2E1B70036E285 /* Storyboard */,
 				91D69B941BF1A3610025A287 /* Extras */,
 				91D69B851BF1A2B60025A287 /* Frameworks */,
@@ -218,9 +238,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				91D69B961BF1A4E40025A287 /* FirebaseController.swift in Sources */,
+				917A0A191BF3E7C60036E285 /* JournalViewController.swift in Sources */,
 				91D69B821BF19BB50025A287 /* Thoughts.swift in Sources */,
+				917A0A211BF3EE4D0036E285 /* MainViewController.swift in Sources */,
+				917A0A1B1BF3E7F00036E285 /* JournalController.swift in Sources */,
 				91D69B7C1BF17C640025A287 /* LoginViewController.swift in Sources */,
 				91D69B801BF19B340025A287 /* ThoughtsController.swift in Sources */,
+				917A0A1F1BF3ED6E0036E285 /* Entry.swift in Sources */,
 				91D69B7E1BF17C760025A287 /* EnterThoughtsViewController.swift in Sources */,
 				91D69B6A1BF16DD00025A287 /* ViewController.swift in Sources */,
 				91D69B681BF16DD00025A287 /* AppDelegate.swift in Sources */,

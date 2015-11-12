@@ -13,6 +13,7 @@ class FirebaseController {
     
     static let base = Firebase(url: "https://quickthoughts.firebaseio.com/")
     static let thoughtBase = base.childByAppendingPath("thoughts")
+    static let journalBase = base.childByAppendingPath("journal")
     
     }
 
