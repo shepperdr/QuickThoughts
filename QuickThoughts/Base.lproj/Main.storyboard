@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="2042" y="-248"/>
         </scene>
-        <!--View Controller-->
+        <!--Thoughts View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ThoughtsViewController" customModule="QuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -288,29 +288,10 @@
             </objects>
             <point key="canvasLocation" x="3374" y="480"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="WuK-ag-hz4">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y2t-uS-8nv" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="acz-6b-v3R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aZD-zk-2KT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMd-Rf-G5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1374" y="480"/>
-        </scene>
-        <!--Main View Controller-->
+        <!--Journal View Controller-->
         <scene sceneID="DL7-th-O86">
             <objects>
-                <viewController id="kjN-wc-fP3" customClass="MainViewController" customModule="QuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kjN-wc-fP3" customClass="JournalViewController" customModule="QuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2VH-yq-ZKj"/>
                         <viewControllerLayoutGuide type="bottom" id="Gkh-VE-k7F"/>
@@ -334,7 +315,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="Y2t-uS-8nv" kind="show" identifier="journalCell" id="2nX-Vq-8XE"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="jrF-8T-GeT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -361,7 +342,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="icF-cF-RV2">
                             <connections>
-                                <segue destination="Y2t-uS-8nv" kind="show" id="aba-F5-Ono"/>
+                                <action selector="addJournal:" destination="kjN-wc-fP3" id="W2p-qa-JiE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -413,7 +394,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2nX-Vq-8XE"/>
-        <segue reference="tk5-NH-Xil"/>
+        <segue reference="f3r-dK-FgD"/>
     </inferredMetricsTieBreakers>
 </document>

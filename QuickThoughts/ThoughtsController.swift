@@ -45,7 +45,7 @@ class ThoughtsController {
             thoughts.removeAtIndex(thoughtsIndex)
            
         }
-        FirebaseController.thoughtBase.childByAppendingPath("Thought").removeValue()
+        FirebaseController.thoughtBase.childByAppendingPath("thoughts").removeValue()
         
     }
     
@@ -54,7 +54,7 @@ class ThoughtsController {
     
         let thoughtDict = self.thoughts.map({$0.dictionaryCopy()})
         
-        FirebaseController.thoughtBase.childByAppendingPath("Thought").setValue(thoughtDict)
+        FirebaseController.thoughtBase.childByAutoId().setValue(thoughtDict)
     }
     
     

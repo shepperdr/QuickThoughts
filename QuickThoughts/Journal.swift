@@ -1,5 +1,5 @@
 //
-//  Entry.swift
+//  Journal.swift
 //  QuickThoughts
 //
 //  Created by Robert Shepperd on 11/11/15.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-class Entry: Equatable {
+class Journal: Equatable {
     
     private let titleKey = "title"
     private let bodyTextKey = "bodyText"
@@ -45,6 +44,6 @@ class Entry: Equatable {
     }
 }
 
-func == (lhs:Entry, rhs:Entry) ->Bool {
+func == (lhs:Journal, rhs:Journal) ->Bool {
     return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
 }

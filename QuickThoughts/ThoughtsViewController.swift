@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ThoughtsViewController.swift
 //  QuickThoughts
 //
 //  Created by Robert Shepperd on 11/9/15.
@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ThoughtsViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
