@@ -15,6 +15,13 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        
+        FirebaseController.sharedInstance.fetchAllJournals { () -> () in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
+        }
+        
         let nc = NSNotificationCenter.defaultCenter()
         
         nc.addObserver(self, selector: "journalsUpdated:", name: journalsUpdateNotification, object: nil)
@@ -37,9 +44,9 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("journalCell", forIndexPath: indexPath)
         
         let journal = JournalController.sharedInstance.journals[indexPath.row]
-        
+
         cell.textLabel?.text = journal.title
-        cell.textLabel?.text = "Test"
+//        cell.textLabel?.text = "Test"
         
         return cell
     }
@@ -66,35 +73,27 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func addJournal(sender: AnyObject) {
-//        let alert = UIAlertController(title: "New Journal", message: "Add a title to your new Journal.", preferredStyle: UIAlertControllerStyle.Alert)
-//        
-//        alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
-//            textField.placeholder = "Journal Title"
-//        })
-//        
-////        alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
-////            textField.placeholder = "Journal Description"
-////        })
-//        
-//        let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//        
-//        alert.addAction(action0)
-//        
-//        let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
-//            let journal = FirebaseController.journalBase.childByAutoId()
-//            
-////            if let textFields = alert.textFields {
-////                journal.title = textFields[0].text
-////            }
-//            
-//            FirebaseController.base.childByAppendingPath("journal").childByAutoId()
-//            
-//            self.tableView.reloadData()
-//        }
-//        
-//        alert.addAction(action1)
-//        
-//        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "New Journal", message: "Add a title to your new Journal.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
+            textField.placeholder = "Journal Title"
+        })
+        
+        let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alert.addAction(action0)
+        let textField = alert.textFields![0]
+        
+        let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
+            
+            FirebaseController.base.childByAppendingPath("journal").childByAutoId().setValue(["title": textField.text!])
+            
+            self.tableView.reloadData()
+        }
+        
+        alert.addAction(action1)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
         
         
     }

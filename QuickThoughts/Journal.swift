@@ -7,38 +7,43 @@
 //
 
 import Foundation
+import Firebase
 
 class Journal: Equatable {
     
     private let titleKey = "title"
-    private let bodyTextKey = "bodyText"
-    
+//    private let journalIDKey = "journalID"
     
     var title: String
-    var bodyText: String
+//    var journalID: String
     
-    init(title:String, bodyText: String) {
-        self.bodyText = bodyText
+    init(title:String) {
+        
         self.title = title
+//        self.journalID = journalID
         
     }
     
+    init(snapshot: FDataSnapshot) {
+        
+        title = snapshot.value["title"] as! String
+
+    }
+    
     init?(dictionary: Dictionary<String, AnyObject>) {
-        guard let title = dictionary[titleKey] as? String,
-            let bodyText = dictionary[bodyTextKey] as? String else {
+        guard let title = dictionary[titleKey] as? String else {
                 self.title = ""
-                self.bodyText = ""
-                
+//                self.journalID = ""
                 return nil
         }
-        self.bodyText = bodyText
+       
         self.title = title
+//        self.journalID = journalID
     }
     
     func dictionaryCopy() -> Dictionary<String, AnyObject> {
-        let dictionary = [
-            titleKey : self.title,
-            bodyTextKey : self.bodyText ]
+        let dictionary = [titleKey : self.title]
+//            journalIDKey : self.journalID]
         
         return dictionary
     }

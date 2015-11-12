@@ -20,7 +20,7 @@ class JournalController {
     var journals:[Journal] {
         
         didSet {
-            NSNotificationCenter.defaultCenter().postNotificationName(journalsUpdateNotification, object: self)
+//            NSNotificationCenter.defaultCenter().postNotificationName(journalsUpdateNotification, object: self)
             
         }
         
@@ -31,21 +31,7 @@ class JournalController {
         self.loadJournal()
         
     }
-    
-//    func createJournal() -> Journal {
-//        let journal = FirebaseController.journalBase.childByAutoId()
-//        
-//        return journal
-//    }
-    
-    
-    func addJournal(journal: Journal) {
-        journals.append(journal)
-        self.saveJournal()
-    }
-    
-    
-    
+
     func removeJournal(journal: Journal) {
         if let journalIndex = journals.indexOf(journal) {
             journals.removeAtIndex(journalIndex)
@@ -54,15 +40,6 @@ class JournalController {
         FirebaseController.journalBase.childByAppendingPath("journal").removeValue()
         
     }
-    
-    
-    func saveJournal() {
-        
-        let journalDict = self.journals.map({$0.dictionaryCopy()})
-        
-        FirebaseController.journalBase.childByAutoId().setValue(journalDict)
-    }
-    
     
     func loadJournal() {
         
@@ -76,6 +53,20 @@ class JournalController {
         })
         
     }
+    
+    
+    //    func addJournal(journal: Journal) {
+    //        journals.append(journal)
+    //        self.saveJournal()
+    //    }
+    
+    //    func saveJournal() {
+    //
+    //        let journalDict = self.journals.map({$0.dictionaryCopy()})
+    //
+    //        FirebaseController.journalBase.childByAutoId().setValue(journalDict)
+    //    }
+
     
     
 }

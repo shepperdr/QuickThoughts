@@ -40,7 +40,7 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
             
         } else {
             let newThought = Thoughts(title: self.titleTextField.text! , bodyText: self.bodyTextView.text)
-            ThoughtsController.sharedInstance.addThoughts(newThought)
+            ThoughtsController.sharedInstance.saveThoughts()
             self.thoughts = newThought
         }
         

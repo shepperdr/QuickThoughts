@@ -32,19 +32,12 @@ class ThoughtsController {
         
     }
     
-    
-    func addThoughts(thought: Thoughts) {
-        thoughts.append(thought)
-        self.saveThoughts()
-        
-    }
-    
-    
     func removeThoughts(thought: Thoughts) {
         if let thoughtsIndex = thoughts.indexOf(thought) {
             thoughts.removeAtIndex(thoughtsIndex)
            
         }
+        
         FirebaseController.thoughtBase.childByAppendingPath("thoughts").removeValue()
         
     }
