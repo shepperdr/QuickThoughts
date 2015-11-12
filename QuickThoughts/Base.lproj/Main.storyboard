@@ -22,7 +22,7 @@
                                 <rect key="frame" x="238" y="133" width="125" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="o6t-PZ-XTv"/>
+                                    <constraint firstAttribute="width" constant="125" id="u39-4M-Oib"/>
                                 </constraints>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,13 +30,6 @@
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="NQ6-ti-3J2" eventType="touchUpInside" id="11P-Cq-k8f"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtC-RD-a5c">
-                                <rect key="frame" x="238" y="285" width="125" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Forgot Password">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeG-rq-I5x">
                                 <rect key="frame" x="238" y="205" width="125" height="30"/>
@@ -52,14 +45,11 @@
                         <animations/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.91372549020000005" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="NtC-RD-a5c" firstAttribute="centerY" secondItem="5cC-VR-pgT" secondAttribute="centerY" id="6HE-Ym-wxb"/>
-                            <constraint firstItem="qeG-rq-I5x" firstAttribute="top" secondItem="oqa-n7-OAG" secondAttribute="bottom" constant="42" id="8bo-AB-lA8"/>
-                            <constraint firstItem="qeG-rq-I5x" firstAttribute="centerX" secondItem="5cC-VR-pgT" secondAttribute="centerX" id="Apm-XA-LHC"/>
-                            <constraint firstItem="oqa-n7-OAG" firstAttribute="trailing" secondItem="qeG-rq-I5x" secondAttribute="trailing" id="JvU-2t-S6V"/>
-                            <constraint firstItem="NtC-RD-a5c" firstAttribute="leading" secondItem="qeG-rq-I5x" secondAttribute="leading" id="KEG-u5-qZo"/>
-                            <constraint firstItem="NtC-RD-a5c" firstAttribute="trailing" secondItem="qeG-rq-I5x" secondAttribute="trailing" id="MtP-cu-Q62"/>
-                            <constraint firstItem="oqa-n7-OAG" firstAttribute="top" secondItem="VjY-rY-k9I" secondAttribute="bottom" constant="69" id="OsW-5K-dxy"/>
-                            <constraint firstItem="oqa-n7-OAG" firstAttribute="leading" secondItem="qeG-rq-I5x" secondAttribute="leading" id="UEz-VC-87q"/>
+                            <constraint firstItem="oqa-n7-OAG" firstAttribute="centerX" secondItem="5cC-VR-pgT" secondAttribute="centerX" id="72D-pO-nEZ"/>
+                            <constraint firstItem="qeG-rq-I5x" firstAttribute="top" secondItem="oqa-n7-OAG" secondAttribute="bottom" constant="42" id="7Go-PX-daK"/>
+                            <constraint firstItem="oqa-n7-OAG" firstAttribute="top" secondItem="VjY-rY-k9I" secondAttribute="bottom" constant="69" id="BB3-uA-gV3"/>
+                            <constraint firstItem="qeG-rq-I5x" firstAttribute="trailing" secondItem="oqa-n7-OAG" secondAttribute="trailing" id="KLR-i0-W5a"/>
+                            <constraint firstItem="oqa-n7-OAG" firstAttribute="leading" secondItem="qeG-rq-I5x" secondAttribute="leading" id="ipF-yc-du4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="HFN-2X-Gnw"/>
@@ -186,6 +176,25 @@
             </objects>
             <point key="canvasLocation" x="2713" y="1194"/>
         </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="Dqf-mw-7vf">
+            <objects>
+                <viewController id="zcV-vC-01o" customClass="SignUpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ky4-J0-VKP"/>
+                        <viewControllerLayoutGuide type="bottom" id="WLd-0Q-QwK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DPQ-Yz-CQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOx-DC-gK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3374" y="1218"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="h2b-8e-yoK">
             <objects>
@@ -242,6 +251,9 @@
                                     <constraint firstAttribute="height" constant="58" id="eoX-fH-GE9"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="zcV-vC-01o" kind="show" id="eZe-Sg-mHJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3K-ui-nck">
                                 <rect key="frame" x="0.0" y="542" width="600" height="58"/>
