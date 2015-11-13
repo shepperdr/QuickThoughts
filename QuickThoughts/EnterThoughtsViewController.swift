@@ -14,7 +14,8 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet var enterThoughtsView: UIView!
     
-    var thoughts: Thoughts?
+    var thought: Thoughts?
+    var journal: Journal?
     
     let tapRec = UITapGestureRecognizer()
     
@@ -34,17 +35,26 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
 
     @IBAction func saveButtonTapped(sender: AnyObject) {
         
-        if let thoughts = self.thoughts {
-            thoughts.title = self.titleTextField.text!
-            thoughts.bodyText = self.bodyTextView.text
-            
+        if let thought = self.thought {
+            thought.title = self.titleTextField.text!
+            thought.bodyText = self.bodyTextView.text
+    
         } else {
+            
             let newThought = Thoughts(title: self.titleTextField.text! , bodyText: self.bodyTextView.text)
+            
+//            if let unwrappedJournal = journal?.dictionaryCopy() {
+            
+                FirebaseController.journalBase.childByAppendingPath("-K2y8zgqoH63RYFd7V2O").childByAppendingPath("thoughts").childByAutoId().setValue(newThought.dictionaryCopy())
+                
+//            }
+            
             ThoughtsController.sharedInstance.saveThoughts()
-            self.thoughts = newThought
+            
+            self.thought = newThought
         }
         
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popViewControllerAnimated(true)
         
     }
     
@@ -56,7 +66,7 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     }
     
     func updateWithThought(thought: Thoughts) {
-        self.thoughts = thought
+        self.thought = thought
         self.titleTextField.text = thought.title
         self.bodyTextView.text = thought.bodyText
         

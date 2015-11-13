@@ -58,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="2042" y="-248"/>
         </scene>
-        <!--Thoughts View Controller-->
+        <!--Add Thought-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ThoughtsViewController" customModule="QuickThoughts" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,17 +98,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c6D-tE-PjL" secondAttribute="bottom" id="4Hb-XM-aIM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="c6D-tE-PjL" secondAttribute="trailing" constant="-20" id="9EE-BX-B2o"/>
-                            <constraint firstItem="c6D-tE-PjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="JX5-mn-jft"/>
-                            <constraint firstItem="c6D-tE-PjL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="Oa9-4t-O5C"/>
+                            <constraint firstItem="c6D-tE-PjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cxj-Fd-Jgc"/>
+                            <constraint firstItem="c6D-tE-PjL" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Iz2-Ta-j6p"/>
+                            <constraint firstAttribute="trailing" secondItem="c6D-tE-PjL" secondAttribute="trailing" id="dad-rU-5ZY"/>
+                            <constraint firstItem="c6D-tE-PjL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i8a-hg-SSe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zhC-0I-X5s">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="kWU-td-SQi"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="8JI-fK-mxh">
+                    <navigationItem key="navigationItem" title="Add Thought" id="hvW-8D-h49">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="m9h-Ze-D8r">
                             <connections>
-                                <segue destination="Rac-2x-te2" kind="show" id="tk5-NH-Xil"/>
+                                <segue destination="Rac-2x-te2" kind="show" id="0BZ-Zt-e9m"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -174,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5C-Vh-p5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713" y="1194"/>
+            <point key="canvasLocation" x="2035" y="1218"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Dqf-mw-7vf">
@@ -352,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhZ-mP-8cZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682" y="480"/>
+            <point key="canvasLocation" x="1369" y="480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ddx-ET-aqg">
@@ -390,7 +389,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bw-ve-rUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="480"/>
+            <point key="canvasLocation" x="678" y="480"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

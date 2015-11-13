@@ -12,38 +12,38 @@ import Firebase
 class Journal: Equatable {
     
     private let titleKey = "title"
-//    private let journalIDKey = "journalID"
-    
+   
     var title: String
-//    var journalID: String
+    let ref: Firebase?
     
     init(title:String) {
         
         self.title = title
-//        self.journalID = journalID
+        self.ref = nil
         
     }
     
     init(snapshot: FDataSnapshot) {
         
         title = snapshot.value["title"] as! String
-
+        ref = snapshot.ref
     }
     
     init?(dictionary: Dictionary<String, AnyObject>) {
-        guard let title = dictionary[titleKey] as? String else {
+        guard let title = dictionary[titleKey] as? String else{
+                
                 self.title = ""
-//                self.journalID = ""
+                self.ref = nil
+               
                 return nil
         }
        
         self.title = title
-//        self.journalID = journalID
+       self.ref = nil
     }
     
     func dictionaryCopy() -> Dictionary<String, AnyObject> {
         let dictionary = [titleKey : self.title]
-//            journalIDKey : self.journalID]
         
         return dictionary
     }

@@ -13,12 +13,12 @@ public let thoughtsUpdateNotification = "thoughtsUpdateNotification"
 
 class ThoughtsController {
     
-   private let thoughtsKey = "thoughts"
+    private let thoughtsKey = "thoughts"
     
     static let sharedInstance = ThoughtsController()
     
     var thoughts:[Thoughts] {
-    
+        
         didSet {
             NSNotificationCenter.defaultCenter().postNotificationName(thoughtsUpdateNotification, object: self)
             
@@ -38,7 +38,7 @@ class ThoughtsController {
            
         }
         
-        FirebaseController.thoughtBase.childByAppendingPath("thoughts").removeValue()
+        FirebaseController.journalBase.childByAppendingPath("thoughts").removeValue()
         
     }
     
@@ -47,13 +47,13 @@ class ThoughtsController {
     
         let thoughtDict = self.thoughts.map({$0.dictionaryCopy()})
         
-        FirebaseController.thoughtBase.childByAutoId().setValue(thoughtDict)
+        FirebaseController.journalBase.childByAutoId().setValue(thoughtDict)
     }
     
     
     func loadThoughts() {
        
-        let thoughtsRef = FirebaseController.thoughtBase.childByAppendingPath("Thought")
+        let thoughtsRef = FirebaseController.journalBase.childByAppendingPath("thought")
         thoughtsRef.observeEventType(.Value, withBlock: { (snapshot) in
             
             if let thoughtDict = snapshot.value as? [Dictionary<String, AnyObject>] {

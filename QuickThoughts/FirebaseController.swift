@@ -14,8 +14,8 @@ class FirebaseController {
 static let sharedInstance = FirebaseController()
     
     static let base = Firebase(url: "https://quickthoughts.firebaseio.com/")
-    static let thoughtBase = base.childByAppendingPath("thoughts")
     static let journalBase = base.childByAppendingPath("journal")
+    //.childByAppendingPath("autoIDOfJournal").childByAppendingPath("autoIDOfThought") // Endpoint for thoughts
     
     func fetchAllJournals(completion: () -> () ) {
         FirebaseController.journalBase.observeEventType(.Value, withBlock: { (snapshot) -> Void in
@@ -28,6 +28,19 @@ static let sharedInstance = FirebaseController()
         })
         
     }
+    
+
+    
+//    func fetchAllThoughts(completion: () -> () ) {
+//        FirebaseController.thoughtBase.observeEventType(.Value, withBlock: { (snapshot) -> Void in
+//            
+//            let arrayOfThoughts = snapshot.children.allObjects
+//            ThoughtsController.sharedInstance.thoughts = (arrayOfThoughts.map{Thoughts.init(snapshot: $0 as! FDataSnapshot)
+//        })
+//            completion()
+//            
+//        })
+//    }
     
 //    func retrieveCurrentJournalsThoughts() {
 //        

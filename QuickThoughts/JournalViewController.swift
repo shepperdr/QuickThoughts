@@ -46,7 +46,7 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         let journal = JournalController.sharedInstance.journals[indexPath.row]
 
         cell.textLabel?.text = journal.title
-//        cell.textLabel?.text = "Test"
+
         
         return cell
     }

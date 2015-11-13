@@ -17,6 +17,14 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        FirebaseController.sharedInstance.fetchAllJournals { () -> () in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
+        }
+
+        
+        
         let nc = NSNotificationCenter.defaultCenter()
         
         nc.addObserver(self, selector: "thoughtsUpdated:", name: thoughtsUpdateNotification, object: nil)
