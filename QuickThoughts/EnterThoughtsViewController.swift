@@ -26,6 +26,10 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         enterThoughtsView.addGestureRecognizer(tapRec)
         tapRec.addTarget(self, action: "tappedView")
         
+        // Hy added this for visual effects
+        UITextField.appearance().tintColor = UIColor.darkGrayColor()
+        UITextView.appearance().tintColor = UIColor.darkGrayColor()
+        
     }
     
     func tappedView() {
