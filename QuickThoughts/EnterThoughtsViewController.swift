@@ -14,6 +14,10 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet var enterThoughtsView: UIView!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayOfWeekLabel: UILabel!
+    
     var thought: Thoughts?
     var journal: Journal?
     
@@ -36,29 +40,28 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         bodyTextView.resignFirstResponder()
     }
     
-
+    
     @IBAction func saveButtonTapped(sender: AnyObject) {
         
         if let thought = self.thought {
             thought.title = self.titleTextField.text!
             thought.bodyText = self.bodyTextView.text
-    
+            
         } else {
             
             let newThought = Thoughts(title: self.titleTextField.text! , bodyText: self.bodyTextView.text)
             
-//            if let unwrappedJournal = journal?.dictionaryCopy() {
-            
-                FirebaseController.journalBase.childByAppendingPath("-K2y8zgqoH63RYFd7V2O").childByAppendingPath("thoughts").childByAutoId().setValue(newThought.dictionaryCopy())
+            ThoughtsController.sharedInstance.postThoughtToJournal(self.journal!, thought:newThought , completion: { (success) -> Void in
+                if success == true {
+                    self.navigationController?.popViewControllerAnimated(true)
+                } else {
+                    print("Failure posting Thought to Journal")
+                }
                 
-//            }
-            
-            ThoughtsController.sharedInstance.saveThoughts()
+            })
             
             self.thought = newThought
         }
-        
-        self.navigationController?.popViewControllerAnimated(true)
         
     }
     

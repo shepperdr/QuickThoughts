@@ -33,17 +33,18 @@ class JournalController {
     }
 
     func removeJournal(journal: Journal) {
-        if let journalIndex = journals.indexOf(journal) {
-            journals.removeAtIndex(journalIndex)
-            
-        }
-        FirebaseController.journalBase.childByAppendingPath("ref").removeValue()
+//        if let journalIndex = journals.indexOf(journal) {
+//            journals.removeAtIndex(journalIndex)
+//            
+//        }
+//        FirebaseController.journalBase.childByAppendingPath("ref").removeValue()
+        journal.ref?.removeValue()
         
     }
     
     func loadJournal() {
         
-        let journalRef = FirebaseController.journalBase.childByAutoId()
+        let journalRef = FirebaseController.journalBase
         journalRef.observeEventType(.Value, withBlock: { (snapshot) in
             
             if let journalDict = snapshot.value as? [Dictionary<String, AnyObject>] {

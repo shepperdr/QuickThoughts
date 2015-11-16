@@ -33,7 +33,7 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
     }
     
-   override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
@@ -44,9 +44,9 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("journalCell", forIndexPath: indexPath)
         
         let journal = JournalController.sharedInstance.journals[indexPath.row]
-
+        
         cell.textLabel?.text = journal.title
-
+        
         
         return cell
     }
@@ -64,8 +64,6 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
             let journal = JournalController.sharedInstance.journals[indexPath.row]
             
             JournalController.sharedInstance.removeJournal(journal)
-            
-            //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
             tableView.reloadData()
             
@@ -95,20 +93,21 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.presentViewController(alert, animated: true, completion: nil)
         
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "showJournals" {
-            if let detailVC = segue.destinationViewController as? EnterThoughtsViewController {
+        if segue.identifier == "showThoughts"  {
+            if let detailVC = segue.destinationViewController as? ThoughtsViewController {
                 _ = detailVC.view
                 
                 let indexPath = tableView.indexPathForSelectedRow
                 
                 if let selectedRow = indexPath?.row {
-                    let thought = ThoughtsController.sharedInstance.thoughts[selectedRow]
-                    detailVC.updateWithThought(thought)
+                    
+                    let journal = JournalController.sharedInstance.journals[selectedRow]
+                    detailVC.journal = journal
+                    
                 }
             }
         }

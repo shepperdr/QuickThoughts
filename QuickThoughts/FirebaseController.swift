@@ -31,25 +31,23 @@ static let sharedInstance = FirebaseController()
     
 
     
-//    func fetchAllThoughts(completion: () -> () ) {
-//        FirebaseController.thoughtBase.observeEventType(.Value, withBlock: { (snapshot) -> Void in
-//            
-//            let arrayOfThoughts = snapshot.children.allObjects
-//            ThoughtsController.sharedInstance.thoughts = (arrayOfThoughts.map{Thoughts.init(snapshot: $0 as! FDataSnapshot)
-//        })
-//            completion()
-//            
-//        })
-//    }
-    
-//    func retrieveCurrentJournalsThoughts() {
-//        
-//        FirebaseController.journalBase.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
-//            <#code#>
-//        })
-//        
-//    }
-
-    
+    func fetchAllThoughts(journal: Journal, completion: () -> () ) {
+        
+        let specificJournalRef = "\(journal.ref)"
+        print(specificJournalRef)
+        let specificJournalUID = specificJournalRef.substringWithRange(Range<String.Index>(start: specificJournalRef.startIndex.advancedBy(54), end: specificJournalRef.endIndex.advancedBy(-1)))
+        print(specificJournalUID)
+        
+        FirebaseController.journalBase.childByAppendingPath(specificJournalUID).childByAppendingPath("Thoughts").observeEventType(.Value, withBlock: { (snapshot) -> Void in
+            
+            let arrayOfThoughts = snapshot.children.allObjects
+            ThoughtsController.sharedInstance.thoughts = (arrayOfThoughts.map{Thoughts.init(snapshot: $0 as! FDataSnapshot)
+                })
+            completion()
+            
+        })
     }
+    
+
+}
 

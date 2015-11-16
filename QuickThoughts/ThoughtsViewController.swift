@@ -13,24 +13,26 @@ import UIKit
 class ThoughtsViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    var journal: Journal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FirebaseController.sharedInstance.fetchAllJournals { () -> () in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
-            })
-        }
+        //        FirebaseController.sharedInstance.fetchAllJournals { () -> () in
+        //            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        //                self.tableView.reloadData()
+        //            })
+        //        }
+       
+//        }
 
-        
         
         let nc = NSNotificationCenter.defaultCenter()
         
         nc.addObserver(self, selector: "thoughtsUpdated:", name: thoughtsUpdateNotification, object: nil)
-    
+        
     }
-    
+
     func thoughtsUpdated(notification: NSNotification) {
        
         tableView.reloadData()
@@ -39,7 +41,11 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+        FirebaseController.sharedInstance.fetchAllThoughts(self.journal!) { () -> () in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
+        }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -87,11 +93,19 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
                 
                 if let selectedRow = indexPath?.row {
                     let thought = ThoughtsController.sharedInstance.thoughts[selectedRow]
+                    detailVC.journal = self.journal
                     detailVC.updateWithThought(thought)
                 }
             }
+        } else if segue.identifier == "newThought" {
+            
+            if let detailVC = segue.destinationViewController as? EnterThoughtsViewController {
+                _ = detailVC.view
+                
+                detailVC.journal = self.journal
+            }
         }
-        
     }
+    
 }
 

@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
     }
     
     // This adds some design to the Username and password textFields
