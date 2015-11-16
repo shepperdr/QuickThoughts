@@ -18,15 +18,6 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        FirebaseController.sharedInstance.fetchAllJournals { () -> () in
-        //            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-        //                self.tableView.reloadData()
-        //            })
-        //        }
-       
-//        }
-
-        
         let nc = NSNotificationCenter.defaultCenter()
         
         nc.addObserver(self, selector: "thoughtsUpdated:", name: thoughtsUpdateNotification, object: nil)
@@ -73,12 +64,7 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
             
             ThoughtsController.sharedInstance.removeThoughts(thought)
             
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
             tableView.reloadData()
-            
-            
-            
             
         }
     }
@@ -97,6 +83,7 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource {
                     detailVC.updateWithThought(thought)
                 }
             }
+            
         } else if segue.identifier == "newThought" {
             
             if let detailVC = segue.destinationViewController as? EnterThoughtsViewController {

@@ -37,9 +37,6 @@ class ThoughtsController {
         thought.ref?.removeValue()
     }
     
-
-    
-   
     func saveThoughts() {
     
         let thoughtDict = self.thoughts.map({$0.dictionaryCopy()})
@@ -62,11 +59,11 @@ class ThoughtsController {
     }
     
     func postThoughtToJournal(journal:Journal, thought:Thoughts, completion:(success:Bool) -> Void) {
-
+        
         let specificJournalRef = "\(journal.ref)"
-        print(specificJournalRef)
+        
         let specificJournalUID = specificJournalRef.substringWithRange(Range<String.Index>(start: specificJournalRef.startIndex.advancedBy(54), end: specificJournalRef.endIndex.advancedBy(-1)))
-        print(specificJournalUID)
+        
         
         let journalRef = FirebaseController.journalBase.childByAppendingPath(specificJournalUID).childByAppendingPath("Thoughts").childByAutoId()
         journalRef.setValue(thought.dictionaryCopy()) { (error, firebase) -> Void in

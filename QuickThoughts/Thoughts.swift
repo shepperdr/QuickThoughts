@@ -41,6 +41,7 @@ class Thoughts: Equatable {
             self.ref = nil
             return nil
         }
+        
         self.bodyText = bodyText
         self.title = title
         self.ref = nil
