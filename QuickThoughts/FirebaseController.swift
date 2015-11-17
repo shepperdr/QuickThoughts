@@ -14,6 +14,7 @@ class FirebaseController {
 static let sharedInstance = FirebaseController()
     
     static let base = Firebase(url: "https://quickthoughts.firebaseio.com/")
+    static let userBase = base.childByAppendingPath("user")
     static let journalBase = base.childByAppendingPath("journal")
     
     func fetchAllJournals(completion: () -> () ) {

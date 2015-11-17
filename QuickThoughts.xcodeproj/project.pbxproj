@@ -11,6 +11,8 @@
 		917A0A231BF410AE0036E285 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917A0A221BF410AE0036E285 /* SignUpViewController.swift */; };
 		917A0A251BF41C7A0036E285 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917A0A241BF41C7A0036E285 /* JournalController.swift */; };
 		917A0A271BF41DC80036E285 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917A0A261BF41DC80036E285 /* Journal.swift */; };
+		9196173B1BFB248200FCEB74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196173A1BFB248200FCEB74 /* User.swift */; };
+		9196173D1BFB249100FCEB74 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196173C1BFB249100FCEB74 /* UserController.swift */; };
 		91D69B681BF16DD00025A287 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D69B671BF16DD00025A287 /* AppDelegate.swift */; };
 		91D69B6A1BF16DD00025A287 /* ThoughtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D69B691BF16DD00025A287 /* ThoughtsViewController.swift */; };
 		91D69B6D1BF16DD00025A287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91D69B6B1BF16DD00025A287 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		917A0A221BF410AE0036E285 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		917A0A241BF41C7A0036E285 /* JournalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		917A0A261BF41DC80036E285 /* Journal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		9196173A1BFB248200FCEB74 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9196173C1BFB249100FCEB74 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		91D69B641BF16DD00025A287 /* QuickThoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickThoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D69B671BF16DD00025A287 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91D69B691BF16DD00025A287 /* ThoughtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +103,8 @@
 		917A09F91BF2F8B70036E285 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				91D69B691BF16DD00025A287 /* ThoughtsViewController.swift */,
 				917A0A201BF3EE4D0036E285 /* JournalViewController.swift */,
+				91D69B691BF16DD00025A287 /* ThoughtsViewController.swift */,
 				91D69B7D1BF17C760025A287 /* EnterThoughtsViewController.swift */,
 				91D69B7B1BF17C640025A287 /* LoginViewController.swift */,
 				91D69B791BF17C550025A287 /* SettingsViewController.swift */,
@@ -129,10 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				91D69B671BF16DD00025A287 /* AppDelegate.swift */,
-				91D69B811BF19BB50025A287 /* Thoughts.swift */,
-				917A0A241BF41C7A0036E285 /* JournalController.swift */,
 				91D69B951BF1A4E40025A287 /* FirebaseController.swift */,
+				9196173A1BFB248200FCEB74 /* User.swift */,
+				9196173C1BFB249100FCEB74 /* UserController.swift */,
 				917A0A261BF41DC80036E285 /* Journal.swift */,
+				917A0A241BF41C7A0036E285 /* JournalController.swift */,
+				91D69B811BF19BB50025A287 /* Thoughts.swift */,
 				91D69B7F1BF19B340025A287 /* ThoughtsController.swift */,
 				917A09F91BF2F8B70036E285 /* ViewControllers */,
 				917A09F81BF2E1B70036E285 /* Storyboard */,
@@ -237,9 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9196173B1BFB248200FCEB74 /* User.swift in Sources */,
 				91D69B961BF1A4E40025A287 /* FirebaseController.swift in Sources */,
 				917A0A251BF41C7A0036E285 /* JournalController.swift in Sources */,
 				91D69B821BF19BB50025A287 /* Thoughts.swift in Sources */,
+				9196173D1BFB249100FCEB74 /* UserController.swift in Sources */,
 				917A0A211BF3EE4D0036E285 /* JournalViewController.swift in Sources */,
 				91D69B7C1BF17C640025A287 /* LoginViewController.swift in Sources */,
 				91D69B801BF19B340025A287 /* ThoughtsController.swift in Sources */,
