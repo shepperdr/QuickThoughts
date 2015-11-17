@@ -67,10 +67,14 @@ class ThoughtsController {
         
         let journalRef = FirebaseController.journalBase.childByAppendingPath(specificJournalUID).childByAppendingPath("Thoughts").childByAutoId()
         journalRef.setValue(thought.dictionaryCopy()) { (error, firebase) -> Void in
+            
             if error != nil {
+                
                 print(error.localizedDescription)
                 completion(success: false)
+                
             } else {
+                
                 print(firebase)
                 completion(success: true)
             }
@@ -78,6 +82,11 @@ class ThoughtsController {
         }
         
     }
+    // i need to get the correct function here to edit and save our thought that already exists....
+//    func editExistingThoughtInJournal(journal: Journal, thought: Thoughts, completion:(success:Bool) -> Void) {
+//        
+//        let editedThought =
+//    }
     
     
     

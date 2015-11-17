@@ -25,7 +25,7 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setDateMonthDayOfWeek()
         titleTextField.delegate = self
         enterThoughtsView.addGestureRecognizer(tapRec)
         tapRec.addTarget(self, action: "tappedView")
@@ -35,6 +35,18 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         UITextView.appearance().tintColor = UIColor.darkGrayColor()
         
     }
+    
+    func setDateMonthDayOfWeek() {
+    
+        let formatter = NSDateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate(":dd:")
+        
+
+        let string = formatter.stringFromDate(NSDate())
+        self.dateLabel.text = ("\(string)")
+        print("\(string)")
+        
+        }
     
     func tappedView() {
         bodyTextView.resignFirstResponder()

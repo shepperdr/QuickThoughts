@@ -134,7 +134,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="c6D-tE-PjL" id="gm4-V2-ZEy"/>
-                        <segue destination="FLJ-CS-byy" kind="presentation" identifier="" id="yQc-rt-7kx"/>
+                        <segue destination="FLJ-CS-byy" kind="presentation" identifier="showLogin" id="yQc-rt-7kx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -531,7 +531,7 @@
                         <barButtonItem key="leftBarButtonItem" image="settings" id="irC-uo-7aM">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="MaX-FU-OvQ" kind="presentation" id="34h-8c-CY7"/>
+                                <segue destination="MaX-FU-OvQ" kind="presentation" identifier="showSettings" id="34h-8c-CY7"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="newJournal" id="icF-cF-RV2">
