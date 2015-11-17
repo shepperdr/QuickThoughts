@@ -531,7 +531,7 @@
                         <barButtonItem key="leftBarButtonItem" image="settings" id="irC-uo-7aM">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="MaX-FU-OvQ" kind="presentation" identifier="showSettings" id="34h-8c-CY7"/>
+                                <segue destination="NQ6-ti-3J2" kind="show" id="x39-yw-JbV"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="newJournal" id="icF-cF-RV2">
@@ -548,25 +548,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhZ-mP-8cZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1369" y="480"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ddx-ET-aqg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MaX-FU-OvQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CUI-fm-H1Y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="NQ6-ti-3J2" kind="relationship" relationship="rootViewController" id="D4R-sH-p1P"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9tQ-2F-0Fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1369" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G2e-zJ-p5z">

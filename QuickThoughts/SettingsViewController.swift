@@ -10,6 +10,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBAction func cancel(sender: AnyObject) {
+    navigationController?.popToViewController(UIViewController() as! JournalViewController, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
       

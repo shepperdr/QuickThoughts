@@ -54,7 +54,6 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return JournalController.sharedInstance.journals.count
-        
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -65,7 +64,7 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
             
             JournalController.sharedInstance.removeJournal(journal)
             
-            tableView.reloadData()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             
         }
     }

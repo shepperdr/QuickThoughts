@@ -34,6 +34,10 @@ class JournalController {
     func removeJournal(journal: Journal) {
 
         journal.ref?.removeValue()
+        if let index = self.journals.indexOf(journal) {
+             self.journals.removeAtIndex(index)
+        }
+       
         
     }
     

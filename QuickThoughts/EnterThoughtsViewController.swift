@@ -25,7 +25,9 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setDateMonthDayOfWeek()
+        
         titleTextField.delegate = self
         enterThoughtsView.addGestureRecognizer(tapRec)
         tapRec.addTarget(self, action: "tappedView")
@@ -38,20 +40,29 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     
     func setDateMonthDayOfWeek() {
     
-        let formatter = NSDateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate(":dd:")
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate(":dd:")
+        let dateString = dateFormatter.stringFromDate(NSDate())
+        self.dateLabel.text = ("\(dateString)")
+        print("\(dateString)")
         
+        let monthFormatter = NSDateFormatter()
+        monthFormatter.setLocalizedDateFormatFromTemplate("MMMM")
+        let monthString = monthFormatter.stringFromDate(NSDate())
+        self.monthLabel.text = ("\(monthString)")
+        print("\(monthString)")
+        
+        let dayOfTheWeekFormatter = NSDateFormatter()
+        dayOfTheWeekFormatter.dateFormat = "EEEE"
+        let dayOfTheWeek = dayOfTheWeekFormatter.stringFromDate(NSDate())
+        self.dayOfWeekLabel.text = ("\(dayOfTheWeek)")
+        print("\(dayOfTheWeek)")
 
-        let string = formatter.stringFromDate(NSDate())
-        self.dateLabel.text = ("\(string)")
-        print("\(string)")
-        
-        }
+    }
     
     func tappedView() {
         bodyTextView.resignFirstResponder()
     }
-    
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
         
