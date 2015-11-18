@@ -14,7 +14,11 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        // Make the NavigationController color clear
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
         
         FirebaseController.sharedInstance.fetchAllJournals { () -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
