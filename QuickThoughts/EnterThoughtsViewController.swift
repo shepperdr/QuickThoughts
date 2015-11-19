@@ -70,20 +70,13 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
         
             thought.title = self.titleTextField.text!
             thought.bodyText = self.bodyTextView.text
-           
-            if let journal = journal {
-                let specificJournalRef = "\(journal.ref)"
-                let specificJournalUID = specificJournalRef.substringWithRange(Range<String.Index>(start: specificJournalRef.startIndex.advancedBy(54), end: specificJournalRef.endIndex.advancedBy(-1)))
-                let specificThoughtRef = "\(thought.ref)"
-                
-                let specificThoughtID = specificThoughtRef.substringWithRange(Range<String.Index>(start: specificThoughtRef.startIndex.advancedBy(54), end: specificThoughtRef.endIndex.advancedBy(-1)))
-                    
-                    
-                FirebaseController.journalBase.childByAppendingPath("\(specificJournalUID)").childByAppendingPath("Thoughts").childByAppendingPath("\(specificThoughtID)").updateChildValues(["title": self.titleTextField.text!, "bodyText": self.bodyTextView.text])
-                
-    }
             
-        } else {
+                let specificThoughtRef = "\(thought.ref)"
+                let specificThoughtID = specificThoughtRef.substringWithRange(Range<String.Index>(start: specificThoughtRef.startIndex.advancedBy(54), end: specificThoughtRef.endIndex.advancedBy(-1)))
+                
+                    FirebaseController.journalBase.childByAppendingPath("\(specificThoughtID)").updateChildValues(["title": self.titleTextField.text!, "bodyText": self.bodyTextView.text])
+                
+    } else {
             
             let newThought = Thoughts(title: self.titleTextField.text! , bodyText: self.bodyTextView.text)
             
