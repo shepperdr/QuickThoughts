@@ -54,5 +54,30 @@ class JournalController {
         
     }
     
+    func postJournalToThought(journal:Journal, thought:Thoughts, completion:(success:Bool) -> Void) {
+        
+        let specificThoughtRef = "\(thought.ref)"
+        
+        let specificThoughtID = specificThoughtRef.substringWithRange(Range<String.Index>(start: specificThoughtRef.startIndex.advancedBy(54), end: specificThoughtRef.endIndex.advancedBy(-1)))
+        
+        
+        let thoughtRef = FirebaseController.journalBase.childByAppendingPath(specificThoughtID).childByAppendingPath("Thoughts").childByAutoId()
+        thoughtRef.setValue(thought.dictionaryCopy()) { (error, firebase) -> Void in
+            
+            if error != nil {
+                
+                print(error.localizedDescription)
+                completion(success: false)
+                
+            } else {
+                
+                print(firebase)
+                completion(success: true)
+            }
+            
+        }
+
     
+        
+    }
 }

@@ -132,10 +132,10 @@
 		91D69B661BF16DD00025A287 /* QuickThoughts */ = {
 			isa = PBXGroup;
 			children = (
-				91D69B671BF16DD00025A287 /* AppDelegate.swift */,
-				91D69B951BF1A4E40025A287 /* FirebaseController.swift */,
 				9196173A1BFB248200FCEB74 /* User.swift */,
 				9196173C1BFB249100FCEB74 /* UserController.swift */,
+				91D69B671BF16DD00025A287 /* AppDelegate.swift */,
+				91D69B951BF1A4E40025A287 /* FirebaseController.swift */,
 				917A0A261BF41DC80036E285 /* Journal.swift */,
 				917A0A241BF41C7A0036E285 /* JournalController.swift */,
 				91D69B811BF19BB50025A287 /* Thoughts.swift */,

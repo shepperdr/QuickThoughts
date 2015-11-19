@@ -67,8 +67,21 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
     @IBAction func saveButtonTapped(sender: AnyObject) {
         
         if let thought = self.thought {
+        
             thought.title = self.titleTextField.text!
             thought.bodyText = self.bodyTextView.text
+           
+            if let journal = journal {
+                let specificJournalRef = "\(journal.ref)"
+                let specificJournalUID = specificJournalRef.substringWithRange(Range<String.Index>(start: specificJournalRef.startIndex.advancedBy(54), end: specificJournalRef.endIndex.advancedBy(-1)))
+                let specificThoughtRef = "\(thought.ref)"
+                
+                let specificThoughtID = specificThoughtRef.substringWithRange(Range<String.Index>(start: specificThoughtRef.startIndex.advancedBy(54), end: specificThoughtRef.endIndex.advancedBy(-1)))
+                    
+                    
+                FirebaseController.journalBase.childByAppendingPath("\(specificJournalUID)").childByAppendingPath("Thoughts").childByAppendingPath("\(specificThoughtID)").updateChildValues(["title": self.titleTextField.text!, "bodyText": self.bodyTextView.text])
+                
+    }
             
         } else {
             
@@ -76,16 +89,19 @@ class EnterThoughtsViewController: UIViewController, UITextFieldDelegate, UIText
             
             ThoughtsController.sharedInstance.postThoughtToJournal(self.journal!, thought:newThought , completion: { (success) -> Void in
                 if success == true {
-                    self.navigationController?.popViewControllerAnimated(true)
+                    
+                   
                 } else {
                     print("Failure posting Thought to Journal")
                 }
-                
             })
             
-            self.thought = newThought
+           self.thought = newThought
         }
         
+        self.navigationController?.popViewControllerAnimated(true)
+        
+
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

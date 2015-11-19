@@ -37,17 +37,11 @@ class ThoughtsController {
         thought.ref?.removeValue()
     }
     
-    func saveThoughts() {
-    
-        let thoughtDict = self.thoughts.map({$0.dictionaryCopy()})
-        
-        FirebaseController.journalBase.childByAutoId().setValue(thoughtDict)
-    }
     
     
     func loadThoughts() {
        
-        let thoughtsRef = FirebaseController.journalBase.childByAppendingPath("thought")
+        let thoughtsRef = FirebaseController.journalBase.childByAppendingPath("Thought")
         thoughtsRef.observeEventType(.Value, withBlock: { (snapshot) in
             
             if let thoughtDict = snapshot.value as? [Dictionary<String, AnyObject>] {
@@ -82,6 +76,8 @@ class ThoughtsController {
         }
         
     }
+    
+    
     // i need to get the correct function here to edit and save our thought that already exists....
 //    func editExistingThoughtInJournal(journal: Journal, thought: Thoughts, completion:(success:Bool) -> Void) {
 //        
