@@ -70,8 +70,33 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             
+            
         }
     }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        // for adding edit to the slide function on the Journal cell.
+        
+        let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { (action, indexPath) -> Void in
+            
+        tableView.editing = true
+        print("Delete")
+        
+        }
+        
+        deleteAction.backgroundColor = .redColor()
+        
+        let editAction = UITableViewRowAction(style: .Default, title: "Edit") { (action, indexPath) -> Void in
+           
+            tableView.editing = true
+            print("Edit")
+        }
+        
+        editAction.backgroundColor = .orangeColor()
+        
+        return [deleteAction, editAction]
+    }
+    
     
     @IBAction func addJournal(sender: AnyObject) {
         let alert = UIAlertController(title: "New Journal", message: "Add a title to your new Journal.", preferredStyle: UIAlertControllerStyle.Alert)
