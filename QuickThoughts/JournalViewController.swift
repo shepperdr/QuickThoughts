@@ -60,43 +60,28 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         return JournalController.sharedInstance.journals.count
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if editingStyle == .Delete {
-            
-            let journal = JournalController.sharedInstance.journals[indexPath.row]
-            
-            JournalController.sharedInstance.removeJournal(journal)
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-            
-            
-        }
-    }
-    
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         // for adding edit to the slide function on the Journal cell.
-        
         let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { (action, indexPath) -> Void in
+            tableView.editing = false
             
-        tableView.editing = true
-        print("Delete")
-        
+            let journal = JournalController.sharedInstance.journals[indexPath.row]
+            JournalController.sharedInstance.removeJournal(journal)
+          
         }
         
         deleteAction.backgroundColor = .redColor()
         
         let editAction = UITableViewRowAction(style: .Default, title: "Edit") { (action, indexPath) -> Void in
            
-            tableView.editing = true
+            tableView.editing = false
             print("Edit")
         }
         
         editAction.backgroundColor = .orangeColor()
+       return [deleteAction, editAction]
         
-        return [deleteAction, editAction]
-    }
-    
+        }
     
     @IBAction func addJournal(sender: AnyObject) {
         let alert = UIAlertController(title: "New Journal", message: "Add a title to your new Journal.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -142,3 +127,18 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
 }
+// found out that i dont need this func if i use the editActionsForRowAtIndexPath. 
+
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//
+//        if editingStyle == .Delete {
+//
+//            let journal = JournalController.sharedInstance.journals[indexPath.row]
+//
+//            JournalController.sharedInstance.removeJournal(journal)
+//
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+//
+//
+//        }
+//    }
