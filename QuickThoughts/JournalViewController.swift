@@ -73,7 +73,37 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         deleteAction.backgroundColor = .redColor()
         
         let editAction = UITableViewRowAction(style: .Default, title: "Edit") { (action, indexPath) -> Void in
-           
+            // not working :/
+            
+            //            let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
+//            
+//            alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
+//                textField.placeholder = "Journal Title"
+//            })
+//            
+//            let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//            
+//            alert.addAction(action0)
+//            let textField = alert.textFields![0]
+//            
+//            let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
+//                
+//                FirebaseController.base.childByAppendingPath("journal").childByAutoId().updateChildValues(["title": textField.text!])
+//                self.tableView.reloadData()
+//            }
+//            
+//            alert.addAction(action1)
+//            
+//            self.presentViewController(alert, animated: true, completion: nil)
+            //thought i might need something like this here to update title.
+            
+            //let journal = JournalController.sharedInstance.journals[indexPath.row]
+            //if journal.title == self.title {
+            //    
+            //} else {
+            //    
+            //}
+
             tableView.editing = false
             print("Edit")
         }
@@ -127,7 +157,7 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
 }
-// found out that i dont need this func if i use the editActionsForRowAtIndexPath. 
+// found out that i dont need this func if i use the editActionsForRowAtIndexPath.
 
 //    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 //
