@@ -74,27 +74,30 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let editAction = UITableViewRowAction(style: .Default, title: "Edit") { (action, indexPath) -> Void in
             // not working :/
+            // kinda working. but still getting nil. need some help. 
             
-            //            let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
-//            
-//            alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
-//                textField.placeholder = "Journal Title"
-//            })
-//            
-//            let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//            
-//            alert.addAction(action0)
-//            let textField = alert.textFields![0]
-//            
-//            let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
-//                
-//                FirebaseController.base.childByAppendingPath("journal").childByAutoId().updateChildValues(["title": textField.text!])
+            
+            let alert = UIAlertController(title: "Change Journal Title", message: "What do you want the new title to be?", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addTextFieldWithConfigurationHandler( { (textField: UITextField) -> Void in
+                textField.placeholder = "Journal Title"
+            })
+            
+            let action0 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            alert.addAction(action0)
+            let textField = alert.textFields![0]
+            
+            let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
+                // this works with the exact ID in it. 
+                
+                FirebaseController.journalNameRef.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").updateChildValues(["title": textField.text!])
 //                self.tableView.reloadData()
-//            }
-//            
-//            alert.addAction(action1)
-//            
-//            self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+            alert.addAction(action1)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
             //thought i might need something like this here to update title.
             
             //let journal = JournalController.sharedInstance.journals[indexPath.row]
