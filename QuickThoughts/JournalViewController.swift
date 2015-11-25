@@ -89,10 +89,11 @@ class JournalViewController: UIViewController, UITableViewDataSource, UITableVie
             let textField = alert.textFields![0]
             
             let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
-                // this works with the exact ID in it. 
+                
+                //works with specific ID
                 
                 FirebaseController.journalNameRef.childByAppendingPath("-K3nR1tMYkVpO3NwfCMj").updateChildValues(["title": textField.text!])
-//                self.tableView.reloadData()
+                self.tableView.reloadData()
             }
             
             alert.addAction(action1)
