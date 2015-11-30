@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
 
-class SignUpViewController: UIViewController {
+
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var createUserName: UITextField!
     @IBOutlet weak var passwordStepOne: UITextField!
@@ -20,15 +22,69 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        createUserName.delegate = self
+        passwordStepOne.delegate = self
+        passwordStepTwo.delegate = self
+        validEmailAddress.delegate = self
+        
     }
     
-    // adds style to the new user textfields
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+//    @IBAction func signupButtonTapped(sender: AnyObject) {
+//        
+//        let emailAddress = validEmailAddress.text
+//        let password = passwordStepOne.text
+//        let confirmPassword = passwordStepTwo.text
+//        let username = createUserName.text
+//        
+//        let user = Firebase()
+    
+        // gonna use something like this for login. 
+        
+//        if emailAddress != "" && password != "" && confirmPassword != ""  {
+//            user.signUpInBackgroundWithBlock {
+//                (succeeded, error) -> Void in
+//                if error == nil {
+//                    // Hooray! Let them use the app now.
+//                    self.performSegueWithIdentifier("unwindToCart", sender: nil)
+//                    
+//                } else {
+//                    
+//                    let alert = UIAlertController(title: "Oops!", message: "There's been an error while signing up.", preferredStyle: .Alert)
+//                    
+//                    
+//                    let OKPressed = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+//                        UIAlertAction in
+//                        print("OK Pressed")
+//                    }
+//                    
+//                    alert.addAction(OKPressed)
+//                    
+//                    self.presentViewController(alert, animated: true, completion: nil)
+//                    
+//                    // Show the errorString somewhere and let the user try again.
+//                }
+//            }
+//            
+//        } else {
+//            let alert = UIAlertController(title: "Oops!", message: "Please fill all fields to signup.", preferredStyle: .Alert)
+//            
+//            
+//            let OKPressed = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+//                UIAlertAction in
+//                print("OK Pressed")
+//            }
+//            
+//            alert.addAction(OKPressed)
+//            
+//            self.presentViewController(alert, animated: true, completion: nil)
+//    }
+
+        // adds style to the new user textfields
     override func viewDidLayoutSubviews() {
         let border = CALayer()
         let width = CGFloat (0.5)
