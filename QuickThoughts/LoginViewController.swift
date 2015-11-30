@@ -24,7 +24,8 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         let border = CALayer()
         let width = CGFloat (0.5)
-        border.borderColor = UIColor.darkGrayColor().CGColor
+        // border.borderColor = UIColor.darkGrayColor().CGColor
+        border.borderColor = UIColor( red: 0/255, green: 102/255, blue:204/255, alpha: 1.0 ).CGColor
         
         // Username textField
         border.frame = CGRect(x: 0, y: userNameTextField.frame.size.height - width, width: userNameTextField.frame.size.width, height: userNameTextField.frame.size.height)

@@ -32,7 +32,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         let border = CALayer()
         let width = CGFloat (0.5)
-        border.borderColor = UIColor.darkGrayColor().CGColor
+        border.borderColor = UIColor( red: 0/255, green: 102/255, blue:204/255, alpha: 1.0 ).CGColor
         
         // createUserName textField
         border.frame = CGRect(x: 0, y: createUserName.frame.size.height - width, width: createUserName.frame.size.width, height: createUserName.frame.size.height)
