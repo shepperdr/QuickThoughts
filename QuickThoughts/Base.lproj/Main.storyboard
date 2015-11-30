@@ -320,9 +320,6 @@
                                         <color key="value" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signupButtonTapped:" destination="zcV-vC-01o" eventType="touchUpInside" id="y0D-3u-zVC"/>
-                                </connections>
                             </button>
                         </subviews>
                         <animations/>
